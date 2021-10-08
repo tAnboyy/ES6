@@ -1,0 +1,33 @@
+es6 = es5 + more features
+
+var declaration- hoisted, function scope, can be redeclared
+let declaration- not hoisted, block scope {}, cannot be redeclared
+const declaration- not hoisted, block scope, cannot be redeclared
+
+prefer const over let over var
+use const if reassignment not expected
+    let if reassignment expected
+
+arrow function-
+short,concise syntax for writing functions
+simplifies behaviour of 'this' keyword
+
+//11- lexical this
+arrow function wont create its own this, rather uses parent's this
+to use this from execution context, use arrow function.. else use regular JS function.
+
+//12- default function parameters
+concept
+
+//13- rest operator
+rest parameter syntax.. represents indefinite number of arguments as an array
+
+//14- spread operator
+opposite of rest
+rest combines, used in function declaration
+spread splits, used in function call
+
+//15, 16- es6 object literals features
+
+//17
+
