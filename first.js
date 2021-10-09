@@ -131,6 +131,7 @@ function createPerson(firstName, lastName, age) {
         }
     }
 }
+
 let p = createPerson("Matt", "Hardy", 69);
 console.log(p.firstName);
 console.log(p.lastName);
@@ -147,3 +148,32 @@ let obj2 = {
 console.log(obj2);
 console.log(obj2["first name"]);
 console.log(obj2["last name"]);
+
+//17
+let employee1 = ["Tan", "Boy", "Male"];
+// let employee1 = ["Tan", "Boy"];
+
+// let [fname, lname, gender = "Male"] = employee1;
+// let [, , gender] = employee1;
+let [fname, ...rest] = employee1;
+
+// console.log(fname);
+// console.log(lname);
+// console.log(gender);
+console.log(rest);
+
+//18
+let employee2 = {
+    fname1: "Tan",
+    lname1: "Boy",
+    gender1: "Female"
+}
+//{}, alias
+let {fname1: f, lname1: l, gender1: g} = employee2;
+// console.log(fname1);
+console.log(f);
+// console.log(lname1);
+console.log(l);
+// console.log(gender1);
+console.log(g);
+
