@@ -177,3 +177,13 @@ console.log(l);
 // console.log(gender1);
 console.log(g);
 
+//19
+let user = "Thanmay";
+// let greet = "Welcome " + user;
+let greet = `Welcome 'hi' "hello" 
+           ${user}
+              multi-line w/o any + operators`;
+
+console.log(greet);
+
+
