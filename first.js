@@ -188,24 +188,33 @@ console.log(greet);
 
 //20
 let colors = ['green', 'red', 'blue'];
-for(let index in colors){
+for (let index in colors) {
     console.log(colors[index]);
 }
 
-for(let color of colors){
+for (let color of colors) {
     console.log(color);
 }
 
 let str = "TAN";
-for(let char of str){
+for (let char of str) {
     console.log(char);
 }
+
+//21
+class Person2 {
+    greet() {
+    }
+}
+
+let p4 = new Person2();
+console.log(p4.greet === Person2.prototype.greet);
 
 //22
 class Person {
     constructor(name) {
-    this.name = name;
-    console.log(this.name);
+        this.name = name;
+        console.log(this.name);
     }
 
     static myName() {
