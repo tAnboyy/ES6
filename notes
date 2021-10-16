@@ -37,5 +37,20 @@ same concept as arrays except {}, alias
 
 //19 string templates
 convenient way to work with strings
-concatenation, single double quotes usage, multi-line strings made easy
+concatenation, single double quotes usage, multi-line strings made easier to work with
 
+//20 for of loop
+similar to for loop but loops over iterables
+used on arrays,strings
+
+//21 classes
+just syntactical sugar to existing prototype based inheritance
+classes are functions(typeof) but are not hoisted,whereas functions are hoisted
+instance created using new keyword
+adding a method to class is the same as adding a method to class's prototype
+
+//22 class body and methods
+class body can have only methods and not properties
+3 types of methods- 1.constructor (only 1 per class).. constructor called when object/instance of class created
+                    2.static method.. static keyword, can call without creating an object
+                    3.prototype method.. called through object/instance

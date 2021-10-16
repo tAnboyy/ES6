@@ -186,4 +186,38 @@ let greet = `Welcome 'hi' "hello"
 
 console.log(greet);
 
+//20
+let colors = ['green', 'red', 'blue'];
+for(let index in colors){
+    console.log(colors[index]);
+}
 
+for(let color of colors){
+    console.log(color);
+}
+
+let str = "TAN";
+for(let char of str){
+    console.log(char);
+}
+
+//22
+class Person {
+    constructor(name) {
+    this.name = name;
+    console.log(this.name);
+    }
+
+    static myName() {
+        console.log(`static method doesnt get access to this.name?`);
+    }
+
+    alwaysName() {
+        console.log(`prototype method gets access to ${this.name}`);
+    }
+}
+
+let p3 = new Person('Tan');
+console.log(p3.name);
+Person.myName();
+p3.alwaysName();
