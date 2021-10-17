@@ -230,3 +230,30 @@ let p3 = new Person('Tan');
 console.log(p3.name);
 Person.myName();
 p3.alwaysName();
+
+//23
+class Person1 {
+    constructor(name) {
+        console.log(name + " Person1 constructor");
+    }
+
+    getId() {
+        return 10;
+    }
+}
+
+class Employee extends Person1 {
+    constructor(name) {
+        super(name);
+        console.log(name + " Employee constructor");
+    }
+
+    getId() {
+        // return 20;
+        return super.getId();
+    }
+}
+
+let e1 = new Employee("Tanboy");
+console.log(e1.getId());
+

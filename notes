@@ -54,3 +54,9 @@ class body can have only methods and not properties
 3 types of methods- 1.constructor (only 1 per class).. constructor called when object/instance of class created
                     2.static method.. static keyword, can call without creating an object
                     3.prototype method.. called through object/instance
+
+//23 class inheritance
+using extends keyword
+if derived class has no constructor, constructor of parent invoked
+super keyword used- to invoke parent constructor inside child constructor
+                    to call parent class methods inside child class
