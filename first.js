@@ -256,4 +256,3 @@ class Employee extends Person1 {
 
 let e1 = new Employee("Tanboy");
 console.log(e1.getId());
-

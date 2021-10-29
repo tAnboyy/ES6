@@ -33,7 +33,7 @@ spread splits, used in function call
 items of array pulled out and assigned to individual variables
 
 //18 destructuring objects
-same concept as arrays except {}, alias
+same concept as arrays except {} used instead of [], alias
 
 //19 string templates
 convenient way to work with strings
@@ -60,3 +60,20 @@ using extends keyword
 if derived class has no constructor, constructor of parent invoked
 super keyword used- to invoke parent constructor inside child constructor
                     to call parent class methods inside child class
+
+//24,25 modules
+helps in separation of concern
+
+//26 named exports
+module imports are hoisted
+can provide alias
+imports are read-only.. eg- imported variables cannot be modified.. but properties of imported objects can be modified
+names have to match while importing
+
+//27 default exports
+used when module exports single variable/function/class
+{} not needed unless using alias
+name doesn't have to match while importing
+
+//28 exporting functions and classes
+(Angular makes use of class exporting)
