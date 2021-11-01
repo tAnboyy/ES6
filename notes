@@ -78,4 +78,29 @@ name doesn't have to match while importing
 //28 exporting functions and classes
 (Angular makes use of class exporting)
 
-//29
+//29,30,31 sets
+set/strong set- list of values, duplicates not allowed, used to check if value present or not, not used to access values 
+let mySet = new Set();
+mySet.add("Hello");
+mySet.add(1);
+mySet.add(1);
+console.log(mySet.size);
+
+let obj1 = {};
+let obj2 = {};
+mySet.add(obj1).add(obj2); //chained insertion 
+console.log(mySet.size); //obj1, obj2 not coersed(like in objects' keys) to strings, so both are inserted 
+
+console.log(mySet.has(4));
+console.log(mySet.delete(1));
+console.log(mySet.size);
+// let obj = {
+//   1: "okok",
+//   "1": "nono"
+// }
+// console.log(obj[1]);
+
+//weak set- can only store weak object references, not primitive values 
+better memory utilization if only dealing with tracking object references
+weak object references.. NOT CLEAR.. to achieve- reference in set to disappear if other references disappear   
+
