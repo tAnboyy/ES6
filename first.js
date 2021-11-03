@@ -256,3 +256,95 @@ class Employee extends Person1 {
 
 let e1 = new Employee("Tanboy");
 console.log(e1.getId());
+
+//29,30,31
+let mySet = new Set();
+mySet.add("Hello");
+mySet.add(1);
+mySet.add(1);
+console.log(mySet.size);
+
+let obj11 = {};
+let obj22 = {};
+mySet.add(obj11).add(obj22); //chained insertion
+console.log(mySet.size); //obj11, obj22 not coerced(like in objects' keys) to strings, so both are inserted
+
+console.log(mySet.has(4));
+console.log(mySet.delete(1));
+console.log(mySet.size);
+
+//iterate through set
+for (let item of mySet) {
+    console.log(item);
+}
+
+// keys in objects internally stored as strings
+// let obj = {
+//   1: "okok",
+//   "1": "nono"
+// }
+// console.log(obj[1]); //1 internally stored as "1", so only "1" key accessible
+
+//32,33,34,35
+let myMap = new Map();
+myMap.set("fname", "tan");
+myMap.set("age", 30);
+console.log(myMap.get("fname"));
+
+let obja = {};
+let objb = {};
+
+myMap.set(obja, 10);
+myMap.set(objb, 20);
+console.log(myMap.get(obja));
+
+myMap.has("fname");
+myMap.delete("fname");
+console.log(myMap.size);
+myMap.clear();
+console.log(myMap.size);
+
+//iterating over maps
+let myMap1 = new Map([
+    ["fname", "Tan"],
+    ["lname", "Boy"]
+]);
+
+for (let key of myMap1.keys()) {
+    console.log(key);
+}
+
+for (let value of myMap1.values()) {
+    console.log(value);
+}
+
+// for (let [key, value] of myMap1.entries()) {
+//     console.log(key + "-> " + value);
+// }
+for (let entry of myMap1.entries()) {
+    console.log(`${entry[0]} -> ${entry[1]}`);
+}
+
+//forEach loop
+let myArr0 = [1, 2, 3];
+let mySet0 = new Set([1, 2, 3]);
+let myMap0 = new Map([
+    ["fname", "Tan"],
+    ["lname", "Boy"]
+]);
+
+myArr0.forEach(function (element, index, callingArray) {
+    console.log("arr[" + index + "]=" + element);
+})
+
+mySet0.forEach(setFunction);
+function setFunction(value, key, callingSet) {
+    console.log(key + " " + value);
+    console.log(mySet0 === callingSet);
+}
+
+myMap0.forEach(mapFunction);
+function mapFunction(value, key, callingMap) {
+    console.log(key + " " + value);
+    console.log(myMap0 === callingMap);
+}
