@@ -1,3 +1,4 @@
+//1-9
 //let
 function greetPerson(name) {
     let greet;
@@ -34,12 +35,11 @@ const PI = 3.14;
 let r = 3;
 let area = PI * r * r;
 
-//functions-
+//10 various functions
 //a
 function sal(x, y, z) {
     return x * y + 10;
 }
-
 sal(6, 7, 8);
 //b
 const sal2 = function (x, y, z) {
@@ -294,7 +294,7 @@ console.log(myMap.get("fname"));
 let obja = {};
 let objb = {};
 
-myMap.set(obja, 10);
+myMap.set(obja, 10); //obj as key
 myMap.set(objb, 20);
 console.log(myMap.get(obja));
 
@@ -338,13 +338,98 @@ myArr0.forEach(function (element, index, callingArray) {
 })
 
 mySet0.forEach(setFunction);
+
 function setFunction(value, key, callingSet) {
     console.log(key + " " + value);
     console.log(mySet0 === callingSet);
 }
 
 myMap0.forEach(mapFunction);
+
 function mapFunction(value, key, callingMap) {
     console.log(key + " " + value);
     console.log(myMap0 === callingMap);
+}
+
+//36
+let s = Symbol("First Symbol");
+console.log(typeof s);
+console.log(s.toString());
+
+// let s2 = Symbol();
+// let s3 = Symbol();
+let s2 = Symbol("test");
+let s3 = Symbol("test"); //still s2,s3 has different IDs ie description doesn't matter
+console.log(s2 === s3);
+
+let s4 = Symbol.for('RegSymbol'); //checks if Symbol with key 'RegSymbol' exists, if not then creates else doesn't
+let s5 = Symbol.for('RegSymbol'); //s5 === s4 ie new Symbol not created
+console.log(s4 === s5);
+console.log(Symbol.keyFor(s4));
+
+//dont get the point of using symbol as object property
+let fname3 = Symbol();
+let person3 = {
+    [fname3]: "Tanboy"
+};
+console.log(Object.getOwnPropertyNames(person3));
+console.log(Object.getOwnPropertySymbols(person3));
+
+//symbol iterator
+let str3 = "hello";
+let arr3 = [1, 2, 3];
+let num = 5;
+let obj = {name: "Thanmay"};
+
+console.log("For string- " + typeof str3[Symbol.iterator]); //function so iterable
+console.log("For array- " + typeof arr3[Symbol.iterator]); //function
+console.log("For number- " + typeof num[Symbol.iterator]); //undefined ie not iterable
+console.log("For object- " + typeof obj[Symbol.iterator]); //undefined
+
+//creating iterator for array.. an example
+let iterable = [1, 2, 3];
+
+function createIterator(array) {
+    let count = 0;
+    return {
+        next: function () {
+            return count < array.length ?
+                {value: array[count++], done: false} :
+                {value: undefined, done: true}
+        }
+    }
+}
+
+let myIterator = createIterator(iterable);
+console.log(myIterator.next())
+console.log(myIterator.next())
+console.log(myIterator.next())
+console.log(myIterator.next())
+
+//iterating objects.. objects by default not iterable
+let person4 = {
+    fname: "tan",
+    lname: "das"
+};
+
+// for (let p of person4) {
+//     console.log(p);
+// }
+
+//adding new property Symbol.iterator to person4's prototype?
+person4[Symbol.iterator] = function() {
+    let properties = Object.keys(person4);
+    let count = 0;
+    let isDone = false;
+    let next = () => {
+        if (count >= properties.length) {
+            isDone = true;
+        }
+        return {done: isDone, value: this[properties[count++]]};
+    }
+    return {next}; //why {}?
+}
+
+for (let p of person4) {
+    console.log(p);
 }

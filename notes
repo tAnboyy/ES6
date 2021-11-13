@@ -1,13 +1,15 @@
+//1-9
 es6 = es5 + more features
 
 var declaration- hoisted, function scope, can be redeclared
 let declaration- not hoisted, block scope {}, cannot be redeclared
-const declaration- not hoisted, block scope, cannot be redeclared
+const declaration- not hoisted, block scope {}, cannot be redeclared
 
 prefer const over let over var
 use const if reassignment not expected
     let if reassignment expected
 
+//10
 arrow function-
 short,concise syntax for writing functions
 simplifies behaviour of 'this' keyword
@@ -17,7 +19,7 @@ arrow function wont create its own this, rather uses parent's this
 to use this from execution context, use arrow function.. else use regular JS function.
 
 //12- default function parameters
-concept
+concept.. refer code
 
 //13- rest operator
 rest parameter syntax.. represents indefinite number of arguments as an array
@@ -28,6 +30,7 @@ rest combines, used in function declaration
 spread splits, used in function call
 
 //15, 16- es6 object literals features
+refer code
 
 //17 destructuring arrays
 items of array pulled out and assigned to individual variables
@@ -90,3 +93,23 @@ map- key,value can be of any type unlike in objects where key is a string
 forEach loop
 WeakMaps- keys can only be objects and object references have to be weak ie dont interfere with garbage collection
           (no practical use-case yet)
+
+//36 Symbol
+primitive types- string, number, boolean, null, undefined
+Symbol primitive type added in ES6
+every new Symbol has different ID (this ID is not accessible)
+built-in symbol registry- to store symbols to be reused later
+
+//37 Symbol iterator
+can be used to check if for of loop can be used on a collection
+
+//38 Iterables, Iterators
+Iterable is any object which implements a method whose key is Symbol.iterator.. ?
+Iterator is any object which implements a next method which returns an object that contains 2 properties(value, done)
+for of loop works using this concept.. calls next() method until it returns false
+
+//39 iterating objects using for of loop.. refer code
+
+//40 Generator.. not implemented
+functions once called always run to completion, generators can be paused in the middle of execution and resumed later
+
