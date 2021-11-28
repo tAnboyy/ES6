@@ -113,3 +113,6 @@ for of loop works using this concept.. calls next() method until it returns fals
 //40 Generator.. not implemented
 functions once called always run to completion, generators can be paused in the middle of execution and resumed later
 
+-- TypeScript
+
+//1
